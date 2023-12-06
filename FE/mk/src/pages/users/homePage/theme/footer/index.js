@@ -9,7 +9,7 @@ const Footer = () => {
     return <footer className="footer">
         <div className="container">
             <div className="row">
-                <div className="col-lg-3">
+                <div className="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                     <div className="footer__about">
                         <h1 className="footer__about_logo">MK SHOP</h1>
                         <ul>
@@ -19,7 +19,7 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="col-lg-6">
+                <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div className="footer__widget">
                         <h6>Stores</h6>
                         <ul>
@@ -46,12 +46,12 @@ const Footer = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="col-lg-3">
+                <div className="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                     <div className="footer__widget">
                         <h6>Promotion & Concessionary</h6>
                         <p>Sign up to recieve Information here</p>
                         <form action="#">
-                            <div>
+                            <div className="input-group">
                                 <input type="text" placeholder="Enter Email" />
                                 <button type="submit" className="button-submit">Sign Up</button>
                             </div>

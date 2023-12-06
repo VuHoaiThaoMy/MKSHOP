@@ -1,0 +1,15 @@
+.container__categories_slider {
+    max-width: 1200px;
+    margin-top: 30px;
+
+    .categories_slider {
+        .categories_slider_item {
+            height: 30px;
+            position: relative;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top center;
+            border-radius: 5px;
+        }
+    }
+}

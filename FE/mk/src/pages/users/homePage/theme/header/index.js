@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
 import './style.scss';
-import { AiFillFacebook } from "react-icons/ai";
+import { AiFillFacebook, AiOutlineMenu, AiOutlinePhone } from "react-icons/ai";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineMail } from "react-icons/ai";
@@ -10,8 +10,9 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { routers } from "utils/router";
 
 const Header = () => {
+    const [isShowCategories, setisShowCategories] = useState(false);
 
-    const [menus, setMenus] = useState([
+    const [menus] = useState([
         {
             name: "Home",
             path: routers.USER.HOME,
@@ -140,6 +141,58 @@ const Header = () => {
                     </div>
                 </div>
             </div >
+            <div className="container">
+                <div className="row hero__categories_container">
+                    <div className="col-lg-3 hero__categories">
+                        <div className="hero__categories_all" onClick={() => setisShowCategories(!isShowCategories)}>
+                            <AiOutlineMenu />
+                            Products List
+                        </div>
+                        <ul className={isShowCategories ? "" : "hidden"}>
+                            <li>
+                                <Link to={"#"}>Lipstick</Link>
+                            </li>
+                            <li>
+                                <Link to={"#"}>Perfume</Link>
+                            </li>
+                            <li>
+                                <Link to={"#"}>Skin Cream</Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="col-lg-9 hero__search_container">
+                        <div className="hero__search">
+                            <div className="hero__search_form">
+                                <form>
+                                    <input type="" name="" value="" placeholder="What do you want to search?" />
+                                    <button type="submit">Search</button>
+                                </form>
+                            </div>
+                            <div className="hero__search_phone">
+                                <div className="hero__search_phone__icon">
+                                    <AiOutlinePhone />
+                                </div>
+                                <div className="hero__search_phone__text">
+                                    <p>0777.777.789</p>
+                                    <span style={{ display: 'flex' }}>Support 24/7</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="hero__item">
+                            <div className="hero__text">
+                                <span>GENUINE HIGH QUALITY PRODUCTS</span>
+                                <h2>
+                                    Lipstick <br />
+                                    100% lead-free
+                                </h2>
+                                <p>Free delivery</p>
+                                <Link to="" className="primary-btn">Buy Now!</Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </>
     );
 };

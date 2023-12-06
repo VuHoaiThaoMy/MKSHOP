@@ -1,8 +1,10 @@
 @use "sass:map";
 @import "styles/pages/theme";
 
+$bannerImg: "/assets/users/images/hero/imgslide.jpg";
+
 .header__top {
-    background-color: #ff518b;
+    background-color: map.get($theme-colors, "main");
 }
 
 .header__top-left {
@@ -171,4 +173,209 @@
             }
         }
     }
+}
+
+.hero__categories {
+    position: relative;
+
+    .hero__categories_all {
+        background-color: map.get($theme-colors, "normal-text");
+        color: map.get($theme-colors, "main");
+        padding: 15px 25px 15px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            color: white;
+        }
+
+        svg,
+        span {
+            font-size: 16px;
+            margin-right: 5px;
+            font-weight: 700;
+        }
+
+        svg {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+
+    ul {
+        border: 1px solid rgb(255, 138, 138);
+        position: absolute;
+        opacity: 1;
+        width: 92%;
+        background-color: #ffffff;
+        transition: all 0.2s;
+        padding: 0;
+
+        li {
+            list-style: none;
+            padding: 8px;
+            cursor: pointer;
+
+            a {
+                text-decoration: none;
+                background-color: transparent;
+                font-size: 16px;
+                color: map.get($theme-colors, "normal-text");
+                line-height: 39px;
+                display: block;
+                padding-left: 40px;
+            }
+
+            &:hover {
+                background-color: rgb(197, 184, 184);
+
+                a {
+                    color: white;
+                }
+            }
+        }
+
+        &.hidden {
+            opacity: 0;
+        }
+    }
+}
+
+.hero__search_container {
+
+    .hero__search_form {
+        width: 610px;
+        height: 50px;
+        float: left;
+        padding-left: 30px;
+        align-items: center;
+
+        form {
+            display: flex;
+            align-items: center;
+        }
+
+        input {
+            border: none;
+            height: 48px;
+            font-size: 16px;
+            color: pink;
+            padding-left: 20px;
+            border: 1px solid #ebebbe;
+            width: 80%;
+
+            :focus {
+                outLine: none;
+                border: none;
+            }
+        }
+
+        button {
+            font-size: 14px;
+            color: map.get($theme-colors, "main");
+            font-weight: 800;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 15px 20px 12px;
+            background-color: map.get($theme-colors, "normal-text");
+            border: none;
+            height: 100%;
+        }
+    }
+
+    .hero__search_phone {
+        display: flex;
+        align-items: center;
+
+        .hero__search_phone__icon {
+            font-size: 25px;
+            padding: 10px;
+            background-color: rgb(241, 241, 241);
+            line-height: 50px;
+            text-align: center;
+            border-radius: 50%;
+            float: left;
+            margin-right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: map.get($theme-colors, "main");
+        }
+
+        .hero__search_phone__text {
+            display: inline-block;
+
+            p {
+                color: map.get($theme-colors, "normal-text");
+                font-weight: bold;
+                margin-bottom: 1px;
+                font-size: 20px;
+            }
+
+            span {
+                color: rgb(171, 170, 170);
+                font-size: 14px;
+            }
+        }
+    }
+
+    .hero__item {
+        margin-left: 30px;
+        margin-right: 60px;
+        margin-top: 10px;
+        background-image: url($bannerImg);
+        background-size: cover;
+        height: 410px;
+        display: flex;
+        align-items: center;
+        padding-left: 75px;
+
+        .hero__text {
+            padding-left: 75px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: white;
+            font-size: 18px;
+        }
+
+        h2 {
+            font-size: 45px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: rgb(0, 0, 0);
+            text-shadow: 2px 4px 3px rgba(232, 217, 217, 0.5);
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 26px;
+            margin: 0 0 15px 0;
+        }
+
+        a {
+            display: block;
+            font-size: 14px;
+            padding: 10px 28px 10px;
+            margin-left: 300px;
+            color: red;
+            text-transform: uppercase;
+            font-weight: 700;
+            background-color: rgb(209, 209, 218);
+            border-radius: 20px;
+            letter-spacing: 2px;
+            text-decoration: none;
+
+            &:hover {
+                color: rgb(221, 33, 80);
+                background-color: rgb(124, 124, 230);
+            }
+        }
+    }
+
+
 }
