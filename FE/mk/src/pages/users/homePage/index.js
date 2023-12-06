@@ -28,8 +28,9 @@ const HomePage = () => {
             {/*Categories Begin*/}
             <div className="container container__categories_slider">
                 <Carousel responsive={responsive} className="categories_slider">
-                    <div className="categories_slider_item">Item 1</div>
-                    style={{ backgroundImage: `url(${chanel1Img})` }}
+                    <div className="categories_slider_item">
+                        style={{ backgroundImage: `url(${chanel1Img})` }} Item1
+                    </div>
                 </Carousel>
             </div >
             {/*Catogories End*/}
